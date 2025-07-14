@@ -132,7 +132,7 @@
 //	long int sum = 0;
 //	int sign = 0;
 //	scanf_s("%d", &n);
-//	for (; n > 0; n--)
+//	for (; n > 0; n--)             //两层循环，重复计算过多
 //	{
 //		result = 1;
 //		for (i = 1; i <= n; i++)
@@ -150,3 +150,71 @@
 //
 //	return 0;
 //}
+
+
+
+
+//二分查找
+//。。。。。。
+
+
+
+////求数组长度
+//#include <stdio.h>	
+//#include <string.h> // 引入字符串处理库
+//int main()
+//{
+//	char arr1[] = "welcome to C!";
+//	char arr2[] = "abc";
+//
+//	int length = 0;
+//	int length1 = 0;
+//	int length2 = 0;
+//	// 1.计算字符串长度
+//	//while (arr1[length] != '\0') // 计算字符串长度
+//	//{
+//	//	length++;
+//	//}
+//
+//	//2.计算字符串长度    'c'下标是2
+//	// 当数组是字符串时，strlen函数计算的是有效字符的长度，不包括结尾的'\0'字符
+//	// 当数组是字符数组时，sizeof函数计算的是整个数组的长度，包括结尾的'\0'字符
+//	// 当数组是字符串时，strlen函数和sizeof函数的结果不同
+//	// 当存放数字时，strlen函数和sizeof函数的结果相同，因为没有结尾的'\0'字符
+//	//{ a b c \0 }
+//	// 0  1  2  3
+//
+//	length1 = strlen(arr2);   //
+//	printf("%d\n", length1); // 输出长度  strlen  3   有三个有效字符\0不算
+//	length2 = sizeof(arr2) / sizeof(arr2[0]);
+//	printf("%d\n", length2); // 输出长度   sizeof   4   有四个字符，包括\0
+//	return 0;
+//}
+//
+
+
+//字符串从两侧向中间移动
+#include <windows.h> // 引入Windows头文件以使用Sleep函数
+#include <stdio.h>
+#include <string.h> // 引入字符串处理库
+#include <stdlib.h>	// 引入标准库以使用system函数
+int main()
+{
+	char arr1[] = "welcome to my project!";
+	char arr2[] = "**********************";
+	int left = 0;
+	int right = strlen(arr1) - 1;
+
+	while (left < right)
+	{
+		printf("%s\n", arr2);
+		Sleep(500); // 暂停0.5秒钟,500毫秒
+		system("cls"); // 清屏
+		arr2[left] = arr1[left];
+		arr2[right] = arr1[right];
+		left++;
+		right--;
+	}
+	printf("%s\n", arr2);
+	return 0;
+}
